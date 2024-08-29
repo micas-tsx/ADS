@@ -21,7 +21,7 @@ int main() {
 	ok = strcmp(user, userVer);
 	
 	if(ok == 0 && senha == senhaVer) {
-		puts("e o micas");
+		numeroMaior();
 	} else {
 		while(ok != 0 || senha != senhaVer) {
 			system("cls");
@@ -35,5 +35,24 @@ int main() {
 			ok = strcmp(user, userVer);
 			system("cls");
 		}
+
+		numeroMaior();
+	}
+}
+
+
+int numeroMaior() {
+	int a, b, c;
+	printf("Digite tres numeros apertando ENTER: \n");
+	scanf("%i %i %i", &a, %b, %c);
+
+	if( (a>b) && (a>c) ) {
+		printf("\nMaior valor e o A: %d", a);
+	} else if( (b>a) && (b>c) ) {
+		printf("\nMaior valor e o B: %d", b);
+	} else if( (c>a) && (c>b) ) {
+		printf("\nMaior valor e o C: %d", c);
+	} else {
+		printf("\nDois ou mais numeros com valores igual: \nA=%d \nB=%d \nC=%d", a, b,c);
 	}
 }
