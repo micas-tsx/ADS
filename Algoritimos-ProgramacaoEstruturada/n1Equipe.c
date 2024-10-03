@@ -14,7 +14,7 @@ int main() {
 	
 	int ok;
 
-	printf("escreva o usuário: ");
+	printf("escreva o usuÃ¡rio: ");
 	gets(userVer);
 			
 	printf("escreva a senha: ");
@@ -28,7 +28,7 @@ int main() {
 	} else {
 		while(ok != 0 || senha != senhaVer) {
 			system("cls");
-			printf("escreva o usuário: ");
+			printf("escreva o usuÃ¡rio: ");
 			scanf("%s", &userVer);
 			fflush(stdin);
 			
@@ -43,21 +43,41 @@ int main() {
 	}
 }
 
-
 int numeroMaior() {
-	int a, b, c;
-	printf("Digite três números apertando ENTER: \n");
-	scanf("%i %i %i", &a, &b, &c);
+    int a, b, c;
+    printf("Digite trÃªs nÃºmeros apertando ENTER: \n");
+    scanf("%i %i %i", &a, &b, &c);
 
-	system("cls");
+    int numeros[3] = {a, b, c};
+    int temp;
+    
+    int i;
+    int j;
+    
+    for ( i = 0; i < 3; i++) {
+        for ( j = 0; j < 3 - i - 1; j++) {
+            if (numeros[j] < numeros[j + 1]) {
+                temp = numeros[j];
+                numeros[j] = numeros[j + 1];
+                numeros[j + 1] = temp;
+            }
+        }
+    }
 
-	if( (a>b) && (a>c) ) {
-		printf("Maior valor é o A: %d", a);
-	} else if( (b>a) && (b>c) ) {
-		printf("Maior valor é o B: %d", b);
-	} else if( (c>a) && (c>b) ) {
-		printf("Maior valor é o C: %d", c);
-	} else {
-		printf("Dois ou mais números com valores igual: \nA=%d \nB=%d \nC=%d", a, b,c);
-	}
+    system("cls");
+    printf("NÃºmeros do maior para o menor:\n\n%d \n%d \n%d", numeros[0], numeros[1], numeros[2]);
+
+    if (numeros[0] == numeros[1] && numeros[1] == numeros[2]) {
+        printf("Todos os nÃºmeros sÃ£o iguais: %d\n", numeros[0]);
+    } else {
+        if (numeros[0] == numeros[1]) {
+            printf("Valores iguais: %d\n", numeros[0]);
+        }
+        if (numeros[0] == numeros[2]) {
+            printf("Valores iguais: %d\n", numeros[0]);
+        }
+        if (numeros[1] == numeros[2]) {
+            printf("Valores iguais: %d\n", numeros[1]);
+        }
+    }
 }
