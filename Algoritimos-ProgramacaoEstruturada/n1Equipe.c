@@ -29,10 +29,10 @@ int main() {
 			scanf("%s", &userVer);
 			fflush(stdin);
 			
-			printf("escreva a senha: s");
+			printf("escreva a senha: ");
 			scanf("%d", &senhaVer);
 	
-			ok = strcmp(user, userVer);
+			ok = strcmp(user, userVer);	
 			system("cls");
 		}
 	}
