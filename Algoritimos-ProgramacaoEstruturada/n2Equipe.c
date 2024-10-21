@@ -4,41 +4,43 @@
 #include <locale.h>
 
 int login() {
-	int senha = 123;
+	nome_do_petshop();
+	int ok;
 	
-	int senhaVer;
+	char senha[20] = "patinha";
+	char senhaVer[20];
 			
 	printf("escreva a senha: ");
-	scanf("%d", &senhaVer);
+	scanf("%s", &senhaVer);
 	
+	ok = strcmp(senha, senhaVer);
 	
-	if(senha == senhaVer) {
-		system("cls");
-		puts("senha correta");
-		system("pause");
-	} else {
-		while(senha != senhaVer) {
+	if(ok != 0) {
+		while(ok != 0) {
 			system("cls");
 			
 			printf("escreva a senha: ");
-			scanf("%d", &senhaVer);
+			scanf("%s", &senhaVer);
+			fflush(stdin);
+			
+			ok = strcmp(senha, senhaVer);
 
-			system("cls");
-			
-			if(senha != senhaVer) {
-				puts("senha incorreta");
-			
-				system("pause");
-			}	
-			
+			system("cls");	
 		}
-		system("cls");
-		puts("senha correta");
 	}
+}
+
+int nome_do_petshop() {
+	puts("Canto_do_Pet");
+}
+
+int menu() {
+	nome_do_petshop();
 }
 
 int main() {
     setlocale(LC_ALL, "Portuguese");
 
     login();
+    menu();
 }
