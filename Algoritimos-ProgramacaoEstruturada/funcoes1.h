@@ -7,6 +7,8 @@ int tosaOption[10];
 int dataOption[10];
 int medOpiton[10];
 
+int i;
+
 
 int nome_do_petshop();
 
