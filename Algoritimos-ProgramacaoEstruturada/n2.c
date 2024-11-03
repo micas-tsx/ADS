@@ -3,18 +3,17 @@
 #include <locale.h>
 #include <string.h>
 
-char nome[100];
-int telefone;
-char endereco[100];
 int option;
+char telefone[16];
+char endereco[100];
+char nome[100];
 
+int optionCar;
 char cor[20];
 char pagamento[50];
-int optionCar;
-char carName[50];
 
-char nomeAcessorio[100];
 int quantidade;
+char nomeAcessorio[100];
 
 int login() {
 	int senha = 123;
@@ -33,16 +32,16 @@ int login() {
 		while(senha != senhaVer) {
 			system("cls");
 			
+			puts("senha incorreta");
+			
+			system("pause");
+			
+			system("cls");
+			
 			printf("escreva a senha: ");
 			scanf("%d", &senhaVer);
 
-			system("cls");
-			
-			if(senha != senhaVer) {
-				puts("senha incorreta");
-			
-				system("pause");
-			}	
+			system("cls");	
 			
 		}
 		system("cls");
@@ -96,7 +95,7 @@ int cadastro() {
 	gets(nome);
 	
 	puts("digite seu telefone:");
-	scanf("%d", &telefone);
+	gets(telefone);
 	
 	puts("digite seu endereço:");
 	fflush(stdin);
@@ -105,9 +104,9 @@ int cadastro() {
 	system("cls");
 	
 	printf("Nome completo: %s\n", nome);
-	printf("Seu endereco: %s\n", endereco);
-	printf("Telefone: %d\n\n", telefone);
-
+	printf("Telefone: %s\n", telefone);
+	printf("Seu endereco: %s\n\n", endereco);
+	
 	system("pause");
 
 	menu();
@@ -125,28 +124,6 @@ int compraCarro() {
 	scanf("%d", &optionCar);
 	fflush(stdin);
 	
-	switch(optionCar) {
-		case 1:
-			carName = "Siena";
-			break;
-			
-		case 2:
-			carName = "Civic";
-			break;
-			
-		case 3:
-			carName = "Lancer";
-			break;
-			
-		default:
-			system("cls");
-			puts("numero inválido");
-			system("pause");
-			compraCarro();
-			break;
-	}
-printf("Carro: %s\n", carName);
-	
 	puts("Qual a cor do seu carro?");
 	fflush(stdin);
 	gets(cor);
@@ -157,7 +134,14 @@ printf("Carro: %s\n", carName);
 	
 	system("cls");
 	
-	printf("Carro: %s\n", carName);
+	//printf("Carro: %s\n", carName);
+	if(optionCar == 1) {
+		printf("Carro: Siena\n");
+	} else if(optionCar == 2 ) {
+		printf("Carro: Civic\n");
+	} else if(optionCar == 3) {
+		printf("Carro: Lancer\n");
+	} 
 	printf("Cor do carro: %s\n", cor);
 	printf("Forma de pagamento: %s\n\n", pagamento);
 	
@@ -169,7 +153,17 @@ printf("Carro: %s\n", carName);
 int compraAcessorio() {
 	system("cls");
 	
-	puts("ta rodando 2");
+	puts("Qual acessório você vai comprar?");
+	fflush(stdin);
+	gets(nomeAcessorio);
+	
+	puts("Quantas você deseja comprar?");
+	scanf("%d", &quantidade);
+	
+	system("cls");
+	
+	printf("Acessório: %s\n", nomeAcessorio);
+	printf("Quantidade: %d\n", quantidade);
 	
 	system("pause");
 	
