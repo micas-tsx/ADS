@@ -6,13 +6,13 @@
 #include "funcoes1.h"
 
 int nome_do_petshop() {
-	puts("Canto_do_Pet");
+	puts("Canto do Pet");
 }
 
 int menu() {
 	nome_do_petshop();
 	
-	puts("Escolha o que vocÃª deseja fazer:");
+	puts("Escolha o que você deseja fazer:");
 	
 	puts("Cadastrar - 1");
 	puts("Agendar - 2");
@@ -21,7 +21,6 @@ int menu() {
 	puts("Sair - 5");
 	
 	scanf("%d", &opcao);
-	cadastrar();
 
     return 0;
 }
@@ -72,7 +71,7 @@ int consulta() {
 	puts("Quinta - 2");
     scanf("%d", &dataOption);
 
-    for(int i = 0; i <= 10; i++) {
+    for(i = 0; i <= 10; i++) {
         printf("Aluno: %s\n", nomeCliente[i] + 1);
     }
 

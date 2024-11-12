@@ -9,7 +9,6 @@ int medOpiton[10];
 
 int i;
 
-
 int nome_do_petshop();
 
 int menu();
